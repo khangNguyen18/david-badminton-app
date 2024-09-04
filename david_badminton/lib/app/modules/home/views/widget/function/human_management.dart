@@ -1,3 +1,4 @@
+import 'package:david_badminton/app/modules/attendance_sheet/view/attendance_sheet.dart';
 import 'package:david_badminton/app/modules/student_list/view/student_management.dart';
 import 'package:david_badminton/common/widgets/function/function_button.dart';
 import 'package:flutter/material.dart';
@@ -27,12 +28,16 @@ class HumanManagement extends StatelessWidget {
           FunctionButton(
             icon: 'assets/icons/coach.svg',
             label: 'Quản lý Huấn luyện viên',
-            onPressed: () {},
+            onPressed: () {
+              
+            },
           ),
           FunctionButton(
             icon: 'assets/icons/attend.svg',
             label: 'Điểm danh',
-            onPressed: () {},
+            onPressed: () {
+              Get.to(() => AttendanceSheet());
+            },
           ),
         ],
       ),

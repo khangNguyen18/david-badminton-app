@@ -1,3 +1,4 @@
+import 'package:david_badminton/app/modules/add_student/add_student.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -7,6 +8,7 @@ import 'package:david_badminton/app/modules/student_list/view/drawer/nav_bar.dar
 import 'package:david_badminton/common/components/text_component.dart';
 import 'package:david_badminton/common/widgets/custom_shape/containers/search_container.dart';
 import 'package:david_badminton/utils/constants/app_color.dart';
+import 'package:iconly/iconly.dart';
 
 class StudentManagement extends StatelessWidget {
   const StudentManagement({super.key});
@@ -48,7 +50,110 @@ class StudentManagement extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 16.h),
+              SizedBox(height: 30.h),
+              // |=====================================================|
+              // |chỗ này có gì thay widget custom dô nếu muốn gọn nha |
+              // |==================================================== |
+              Row(
+                children: [
+                  SizedBox(
+                    width: 140.sp,
+                    height: 40.sp,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Get.to(AddStudent());
+                      },
+                      child: Row(
+                        children: [
+                          Icon(
+                            IconlyBold.plus,
+                            color: Colors.green,
+                          ),
+                          SizedBox(
+                            width: 5.sp,
+                          ),
+                          TextComponent(
+                            content: 'Thêm mới',
+                            color: Colors.green,
+                            weight: FontWeight.bold,
+                          )
+                        ],
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(5),
+                            side: BorderSide(width: 0.2),
+                          ),
+                          backgroundColor: Colors.white),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  SizedBox(
+                    width: 100.sp,
+                    height: 40.sp,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Row(
+                        children: [
+                          Icon(
+                            IconlyBold.delete,
+                            color: Colors.red,
+                          ),
+                          SizedBox(
+                            width: 5.sp,
+                          ),
+                          TextComponent(
+                            content: 'Xóa',
+                            color: Colors.red,
+                            weight: FontWeight.bold,
+                          )
+                        ],
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          shape: BeveledRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                              side: BorderSide(width: 0.2)),
+                          backgroundColor: Colors.white),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  SizedBox(
+                    width: 140.sp,
+                    height: 40.sp,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Row(
+                        children: [
+                          Icon(
+                            IconlyBold.edit,
+                            color: Colors.blue,
+                          ),
+                          SizedBox(
+                            width: 5.sp,
+                          ),
+                          TextComponent(
+                            content: 'Chỉnh sửa',
+                            color: Colors.blue,
+                            weight: FontWeight.bold,
+                          )
+                        ],
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          shape: BeveledRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                              side: BorderSide(width: 0.2)),
+                          backgroundColor: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 8.sp,
+              ),
               Expanded(
                 child: PaginatedDataTable2(
                   columnSpacing: 6.w,
